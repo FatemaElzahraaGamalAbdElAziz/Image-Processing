@@ -1,6 +1,6 @@
 function [G1Matrix] = Gauss1(size,sig)
   msk = [];
-  startPoint = floor(-size/2);
+  startPoint = ceil(-size/2);
   endPoint = floor(size/2);
    x = startPoint;
    y = endPoint;
