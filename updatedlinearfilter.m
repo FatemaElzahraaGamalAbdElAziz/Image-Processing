@@ -13,9 +13,10 @@ function out = linearfilter ( inp , filter , postproc )
  img = zeros(imx+padx,imy+pady);
  out = zeros(imx,imy);
  
- for i= 2:imx+1
-    for j = 2:imy+1
-      img(i,j)= inp(i-1,j-1);
+ for i= padx/2 +1 :imx+1
+    for j = pady/2+1 :imy+1
+    
+      img(i,j)= inp(i- padx/2 ,j-pady/2);
    
    endfor
 endfor
@@ -35,7 +36,17 @@ endfor
          
          endfor
        endfor 
-     out(imgi,imgj) = accum;
+       
+       ii=imgi;
+       jj=imgj;
+     if(imgi==imx-padx/2)
+      ii=imgi+1;
+      endif
+     if(imgj==imy-pady/2)
+     jj=imgj+1;
+      endif
+     
+     out(ii,jj) = accum;
      
      endfor
    endfor
