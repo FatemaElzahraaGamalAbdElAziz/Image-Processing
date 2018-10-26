@@ -40,10 +40,11 @@ endfor
        ii=imgi;
        jj=imgj;
      if(imgi==imx-padx/2)
-      ii=imgi+1;
+      ii=imgi+padx/2;
       endif
+      
      if(imgj==imy-pady/2)
-     jj=imgj+1;
+     jj=imgj+pady/2;
       endif
      
      out(ii,jj) = accum;
