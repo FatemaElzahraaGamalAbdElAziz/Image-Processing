@@ -13,8 +13,8 @@ function out = linearfilter ( inp , filter , postproc )
  img = zeros(imx+padx,imy+pady);
  out = zeros(imx,imy);
  
- for i= padx/2 +1 :imx+1
-    for j = pady/2+1 :imy+1
+ for i= padx/2 +1 :imx+pad/2
+    for j = pady/2+1 :imy+pad/2
     
       img(i,j)= inp(i- padx/2 ,j-pady/2);
    
